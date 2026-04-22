@@ -3,8 +3,7 @@
   "name": "Clean Cache",
   "version": "1.0.0",
   "description": "A simple Chrome extension to clear cache and site data for testing websites.",
-  "permissions": ["browsingData", "tabs"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": ["browsingData", "activeTab"],
   "action": {
     "default_title": "Clean Cache",
     "default_popup": "popup.html",
