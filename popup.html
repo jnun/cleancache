@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clean Cache</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Clean Cache</h1>
+        <p class="subhead">Clear cache and site data for the current site.</p>
+      </header>
+
+      <section class="site-card">
+        <div class="label">Current site</div>
+        <div id="site" class="site-value">Loading...</div>
+      </section>
+
+      <section class="actions" aria-label="Cache actions">
+        <button id="clear-files" class="btn btn-neutral" type="button">
+          <span class="btn-title">Clear files</span>
+          <span class="btn-note">Clears cached files and service worker data.</span>
+        </button>
+
+        <button id="reset-session" class="btn btn-warn" type="button">
+          <span class="btn-title">Reset session</span>
+          <span class="btn-note">Clears cookies and local site session data.</span>
+        </button>
+
+        <button id="nuke-site" class="btn btn-danger" type="button">
+          <span class="btn-title">Nuke this site</span>
+          <span class="btn-note">Clears files, cookies, and local site storage.</span>
+        </button>
+      </section>
+
+      <section class="status-wrap">
+        <div id="status" class="status" role="status" aria-live="polite">
+          <span class="dots"><span></span><span></span><span></span></span>
+          <span id="status-text"></span>
+        </div>
+      </section>
+    </main>
+
+    <div id="nuke-modal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-icon">&#x1F4A5;</div>
+        <p class="modal-title">Warning</p>
+        <p class="modal-body" id="nuke-modal-body"></p>
+        <div class="modal-actions">
+          <button id="nuke-cancel" class="modal-btn modal-btn-cancel" type="button">Cancel</button>
+          <button id="nuke-confirm" class="modal-btn modal-btn-confirm" type="button">Nuke it</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
